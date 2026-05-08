@@ -224,10 +224,32 @@ console.log(Actusers);
 
 
 // Q9. (Add new field)
-// 👉 Har product me inStock: true add karo (immutably)
+//  Har product me inStock: true add karo (immutably)
 
-let products = [
+let ElectronicProducts = [
   { name: "phone", price: 10000 },
-  { name: "laptop", price: 50000 }
+  { name: "laptop", price: 50000 },
+  { name: "tablet", price: 20000 },
 ];
 
+let updateProduct = ElectronicProducts.map((el) => ({
+  ...el,
+  inStock:true
+}))
+
+console.log(updateProduct);
+
+// let updateProduct =  ElectronicProducts.map((product)=> {
+//     ...product,
+//     inStock: true ;
+// })
+// console.log(updateProduct);
+
+// let updateProduct = ElectronicProducts.map((el) => {
+//   return {
+//     ...el,
+//     inStock: true
+//   }
+// })
+
+// console.log(updateProduct);
