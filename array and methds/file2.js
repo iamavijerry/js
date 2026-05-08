@@ -234,7 +234,7 @@ let ElectronicProducts = [
 
 let updateProduct = ElectronicProducts.map((el) => ({
   ...el,
-  inStock:true
+  inStock: true
 }))
 
 console.log(updateProduct);
@@ -253,3 +253,119 @@ console.log(updateProduct);
 // })
 
 // console.log(updateProduct);
+
+
+// Q10. (Sort by price)
+// Price ke basis par ascending order me sort karo
+
+let productsListElec = [
+  { name: "phone", price: 10000 },
+  { name: "laptop", price: 50000 },
+  { name: "earbuds", price: 2000 }
+];
+
+let sorting = productsListElec.sort((a, b) => a.price - b.price)
+
+console.log(sorting);
+
+
+// Q1. (Total revenue)
+// 👉 Total revenue calculate karo
+let orders = [
+  { id: 1, amount: 2500 },
+  { id: 2, amount: 4000 },
+  { id: 3, amount: 1500 }
+];
+
+let reveneu = orders.reduce((acc, item) => acc + item.amount, 0);
+console.log(reveneu);
+
+// Q2. (Only completed tasks)
+// Sirf completed tasks ka array banao
+
+let tasks1 = [
+  { title: "HTML", completed: true },
+  { title: "CSS", completed: false },
+  { title: "JavaScript", completed: true }
+];
+
+let completedTasks = tasks1.filter((el) => (el.completed))
+
+console.log(" Q2. (Only completed tasks)",completedTasks);
+
+
+// Q3. (Find expensive product)
+// Sabse expensive product find karo.
+
+let productsEx = [
+  { name: "Phone", price: 20000 },
+  { name: "Laptop", price: 70000 },
+  { name: "Mouse", price: 1000 }
+];
+
+let mostExpensive = productsEx.reduce((max, item) => {
+  return item.price > max.price ? item : max
+});
+console.log ("Find expensive product ====>",  mostExpensive);
+
+// let mostEx = productsEx[0];
+// for (let i = 0; i < productsEx.length; i++) {
+//     if(productsEx[i].price > mostEx.price) {
+//       mostEx = productsEx[i]
+//     }
+// }
+
+// console.log(mostEx);
+
+
+// Q4. (Convert to usernames)
+// Output:
+// ["rahul.sharma", "neha.verma"]
+let usersData3 = [
+  { firstName: "Rahul", lastName: "Sharma" },
+  { firstName: "Neha", lastName: "Verma" }
+];
+
+let x = usersData3.map((el) => `${(el.firstName).toLocaleLowerCase()}.${(el.lastName).toLocaleLowerCase()} `);
+console.log(x);
+
+
+// Q5. (Count active users)
+//  Total active users count karo
+let users5 = [
+  { name: "Amit", active: true },
+  { name: "Rahul", active: false },
+  { name: "Neha", active: true }
+];
+
+// console.log(users5.length);
+let activeUsers = users5.filter((user) => user.active);
+console.log(activeUsers.length);
+
+
+// Q6. (Extract skills)
+//  Sare skills ko ek single array me convert karo
+//  Expected:
+// ["HTML", "CSS", "JavaScript", "React"]
+
+let developers = [
+  { name: "Rahul", skills: ["HTML", "CSS"] },
+  { name: "Amit", skills: ["JavaScript", "React"] }
+];
+let exSkills = developers.flatMap((el) => (el.skills));
+console.log(exSkills);
+
+
+// Q7. (Check all adults).
+// Check karo kya sabki age 18+ hai.
+
+let people = [
+  { name: "Rahul", age: 22 },
+  { name: "Neha", age: 19 },
+  { name: "Amit", age: 17 }
+];
+
+let isAdult = people.every(el => (el.age) > 17)
+console.log(isAdult);
+
+
