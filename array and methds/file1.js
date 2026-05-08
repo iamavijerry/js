@@ -128,10 +128,15 @@ let max = arrlarge[0];
 for (let i = 0; i < arrlarge.length; i++) {
   if (arrlarge[i] > max) {
     max = arrlarge[i];
-  }
-  
-}
+  }  
+} 
 console.log("Max : ", max);
 
 
+//  Reverse Array (without .reverse())
+let array = [3, 7, 2, 9, 5];
+let revArray = [];
 
+for (let i = array.length - 1; i >= 0; i--) {
+  console.log(array[i]);
+}
